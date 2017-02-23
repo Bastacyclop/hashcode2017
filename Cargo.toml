@@ -1,0 +1,9 @@
+[package]
+name = "hashcode2017"
+version = "0.1.0"
+authors = ["Thomas Koehler <basta.t.k+git@gmail.com>",
+           "Andrew Hatoum",
+           "Aymeric Robini",
+           "Marco Ponti"]
+
+[dependencies]
