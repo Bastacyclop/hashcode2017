@@ -1,10 +1,15 @@
-use std::io;
+use std::{io, fs};
 
 pub struct Output {
     pub caches: Vec<Cache>,
 }
 
 impl Output {
+    pub fn to_file(&self, path: &str) {
+        let file = fs::File::create(path).unwrap();
+        self.output(&mut io::BufWriter::new(file));
+    }
+
     pub fn output<W: io::Write>(&self, w: &mut W) {
         writeln!(w, "{}", self.caches.len()).unwrap();
         for c in &self.caches {
